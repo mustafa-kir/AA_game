@@ -65,13 +65,14 @@ public class gameManager : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         animator.SetTrigger("EndGame");
         gameHasEnded = true;
-        StartCoroutine(delay(1));
+        StartCoroutine(delay(2));
 
-        SceneManager.LoadScene(0);
+        
     }
 
     IEnumerator delay(float time)
     {
         yield return new WaitForSeconds(time);
+        SceneManager.LoadScene(0);
     }
 }
